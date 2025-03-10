@@ -88,11 +88,14 @@ class Map:
         cx, cy = c[0], c[1]
         if self.cells[cx][cy] == 1:
             self.cells[cx][cy] = 5
-    def update_fires(self):
+    def update_fires(self,helico):
         for ri in range(self.h):
             for ci in range(self.w):
                 cell = self.cells[ri][ci]
                 if cell == 5:
+                    # при згорании снимает очки
+                    if helico.score > 0:
+                        helico.score -= 20
                     self.cells[ri][ci] = 0
         for i in range(5):      
             self.add_fire()

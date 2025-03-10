@@ -69,6 +69,6 @@ while True:
     if (tick % TREE_UPDATE == 0):
         tmp.generate_tree()
     if (tick % FIRE_UPDATE == 0):
-        tmp.update_fires()
+        tmp.update_fires(helicopter)
     if (tick % CLOUDS_UPDATE == 0):
         clouds.update_clouds()
